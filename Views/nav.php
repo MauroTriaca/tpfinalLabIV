@@ -17,7 +17,7 @@
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Job offer</a>
                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="">Add</a></li>
+                    li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>JobOffer/ShowAddView">Add</a></li>
                </ul>
           </li> 
           <li class="nav-item dropdown">
