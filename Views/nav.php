@@ -1,32 +1,39 @@
-  <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Empresa</a>
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+     <span class="navbar-text">
+          <strong>UTN</strong>
+     <span class="nav-item">
+          <strong><a class="nav-link" data-bs-toggle="" href="<?php echo FRONT_ROOT ?>User/ShowAdminProfileView" role="button" aria-expanded="false" style="color: rgba(255,255,255,.5);">Profile</a></strong>
+     </span>
+
+     <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Company</a>
                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>Company/ShowAddView">Agregar</a></li>
-                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>Company/ShowListView">Listar</a></li>
-                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>Company/ShowModifyView">Modificar</a></li>
+                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>Company/ShowAddView">Add</a></li>
+                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>Company/ShowListView">To List</a></li>
+                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>Company/ShowModifyView">Modify</a></li>
                </ul>
           </li>     
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Oferta Laboral</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Job offer</a>
                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="">Cargar</a></li>
+                    <li><a class="dropdown-item" href="">Add</a></li>
                </ul>
           </li> 
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Estudiante</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Student</a>
                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="">Listar</a></li>
+                    <li><a class="dropdown-item" href="">To List</a></li>
                </ul>
           </li>    
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Usuario</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">User</a>
                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="">Agregar</a></li>
-                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>User/ShowAddView">Agregar</a></li>
+                    <li><a class="dropdown-item" href="<?php echo FRONT_ROOT ?>User/ShowAddView">Add</a></li>
                </ul>
           </li> 
           <li class="nav-item">
-               <a class="nav-link" data-bs-toggle="" href="<?php echo FRONT_ROOT ?>User/Logout" role="button" aria-expanded="false">Cerrar sesion</a>
+               <a class="nav-link" data-bs-toggle="" href="<?php echo FRONT_ROOT ?>User/Logout" role="button" aria-expanded="false">Logout</a>
           </li> 
      </ul>
 </nav>

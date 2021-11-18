@@ -4,7 +4,7 @@
 <main class="py-5">
     <section id="listado" class="mb-5">
         <div class="container">
-            <h2 class="mb-4">Student information</h2>
+             <h2 class="mb-4">Welcome<?php echo $_SESSION['logged']->getFirstName() ?></h2>
             <table class="table">
                 <thead>
                     <tr class="table-primary">
@@ -16,10 +16,10 @@
                 </thead>
                 <tbody>
                     <tr class="table-light">
-                        <th><?php echo $_SESSION['loggedUser']->getCareerId() ?></th>
-                        <td><?php echo $_SESSION['loggedUser']->getFirstName() ?></td>
-                        <td><?php echo $_SESSION['loggedUser']->getLastName() ?></td>
-                        <td><?php echo $_SESSION['loggedUser']->getDni() ?></td>
+                        <th><?php echo $_SESSION['logged']->getCareerId() ?></th>
+                        <td><?php echo $_SESSION['logged']->getFirstName() ?></td>
+                        <td><?php echo $_SESSION['logged']->getLastName() ?></td>
+                        <td><?php echo $_SESSION['logged']->getDni() ?></td>
                     </tr>
                 </tbody>
                 <thead>
@@ -32,10 +32,10 @@
                 </thead>
                 <tbody>
                     <tr class="table-light">
-                        <th><?php echo $_SESSION['loggedUser']->getFileNumber() ?></th>
-                        <td><?php echo $_SESSION['loggedUser']->getGender() ?></td>
-                        <td><?php echo $_SESSION['loggedUser']->getBirthDate() ?></td>
-                        <td><?php echo $_SESSION['loggedUser']->getPhoneNumber() ?></td>
+                        <th><?php echo $_SESSION['logged']->getFileNumber() ?></th>
+                        <td><?php echo $_SESSION['logged']->getGender() ?></td>
+                        <td><?php echo $_SESSION['logged']->getBirthDate() ?></td>
+                        <td><?php echo $_SESSION['logged']->getPhoneNumber() ?></td>
                     </tr>
                 </tbody>
                 <thead>
@@ -45,7 +45,7 @@
                 </thead>
                 <tbody>
                     <tr class="table-light">
-                        <td colspan="4" style="text-align:center;"><?php echo $_SESSION['loggedUser']->getEmail() ?></td>
+                        <td colspan="4" style="text-align:center;"><?php echo $_SESSION['logged']->getEmail() ?></td>
                     </tr>
                 </tbody>
             </table>

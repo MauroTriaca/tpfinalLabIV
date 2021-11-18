@@ -18,32 +18,39 @@
 			//para session
 			$logged = NULL;
 
-			foreach ($listUsers as $key => $value) {
-				if($user == $value->getEmail()){
-					$logged = $value; 
-				}
-			}
+			$logged = $this->sessionInicAs($listUsers, $user);
 
-			foreach ($listStudents as $key => $value) {
-				if($user == $value->getEmail()){
-					$logged = $value; 
-				}
-			}
+			if ($logged == NULL){
+                $logged = $this->sessionInicAs($listStudents, $user);
+            }
 
 			if($logged !=NULL && $logged->getActive() == true){
 				if($logged->getRol == "Student"){
 					$_SESSION["logged"] = logged;
-					$this->ShowProfileView();
+					$this->ShowStudentProfileView();
 				}
 				else{
 					$_SESSION["logged"] = $logged;
-					require_once(VIEWS_PATH."add-company.php");
+					require_once(VIEWS_PATH."admin-profile.php");
 				}
 			
 			}else{
 				require_once(VIEWS_PATH."home.php");
 			}
 		}
+
+		private function sessionInicAs($list, $user)
+        {
+            $logged = NULL;
+
+            foreach ($list as $key => $value) {
+                if($user == $value->getEmail()){
+                    $logged = $value;
+                }
+            }
+            return $logged;
+        }
+  
 
 		public function Logout(){
 			session_destroy();
@@ -54,7 +61,12 @@
 			require_once(VIEWS_PATH."add-user.php");
 		}
 
-		 public function ShowProfileView()
+		public function ShowAdminProfileView()
+        {
+            require_once(VIEWS_PATH."admin-profile.php");
+        }
+
+		 public function ShowStudentProfileView()
         {
             require_once(VIEWS_PATH."student-profile.php");
         }
