@@ -118,7 +118,7 @@
          public function GetAllApi()
         {
             $jsonApi = $this->RetrieveDataApi();
-            $userList = array();
+            $listUsers = array();
 
             foreach($jsonApi as $value){
                 $user = new User ();
