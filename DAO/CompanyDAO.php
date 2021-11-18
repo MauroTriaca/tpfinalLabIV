@@ -68,6 +68,17 @@
             $this->saveData();
         }
 
+           ///recibe el nombre la compania, la busca en la lista
+           ///y si la encuentra la retorna 
+         public function getCompanyName($nameCompany)
+        {
+            $this->RetrieveData();
+            foreach($this->companyList as $company){
+                if($company->getName() == $name){
+                    return $company;
+                }
+            }
+        }
 
         private function SaveData()
         {

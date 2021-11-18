@@ -86,6 +86,18 @@
             }
             $this->ShowListView();
         }
+
+        public function ShowCompanyView($nameCompany)
+        {
+            $company = $this->companyDAO->getCompanyName($nameCompany);
+            $companyList = $this->companyDAO->GetAll();
+            if($company != null){
+                require_once(VIEWS_PATH."company.php");
+            } else {
+                echo "<script> if(alert('No se encontro la empresa')); </script>";
+                require_once(VIEWS_PATH."student-company.php");
+            }
+        }
         
     }
 ?>
