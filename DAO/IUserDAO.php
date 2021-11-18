@@ -4,8 +4,8 @@ use Models\User as User;
 
     interface IUserDAO{
         function Add(User $user);
-        function GetALL();
+        function GetAll();
         function RetrieveDataApi();
-        function SaveData();
+        function GetAllApi();
     }
 ?>
