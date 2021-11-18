@@ -1,9 +1,9 @@
 <?php
 namespace DAO;
-use Models\Student as Student;
+use Models\User as User;
 
-    interface IStudentDAO{
-        function Add(Student $student);
+    interface IUserDAO{
+        function Add(User $user);
         function GetALL();
         function RetrieveDataApi();
         function SaveData();
