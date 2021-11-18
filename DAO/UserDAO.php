@@ -115,7 +115,7 @@
             return $toJson;
         } 
 
-         public function GetAllApi ()
+         public function GetAllApi()
         {
             $jsonApi = $this->RetrieveDataApi();
             $userList = array();
