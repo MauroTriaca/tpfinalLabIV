@@ -115,6 +115,8 @@
             return $toJson;
         } 
 
+
+        //trae los estudiantes desde la api
          public function GetAllApi()
         {
             $jsonApi = $this->RetrieveDataApi();
