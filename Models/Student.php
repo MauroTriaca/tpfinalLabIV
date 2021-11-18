@@ -5,6 +5,12 @@ namespace Models;
         private $studentId;
         private $careerId;
 
+    
+    function __construct()
+    {
+        $this->setRol("student");
+    }
+
         
         
     

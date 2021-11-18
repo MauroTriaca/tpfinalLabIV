@@ -11,7 +11,7 @@ namespace Models;
         private $email;
         private $phoneNumber;
         private $active;
-        private $profile;
+        private $rol;
         private $password;
         
     
@@ -198,19 +198,19 @@ namespace Models;
     /**
      * @return mixed
      */
-    public function getProfile()
+    public function getRol()
     {
-        return $this->profile;
+        return $this->rol;
     }
 
     /**
-     * @param mixed $profile
+     * @param mixed $rol
      *
      * @return self
      */
-    public function setProfile($profile)
+    public function setRol($rol)
     {
-        $this->profile = $profile;
+        $this->rol = $rol;
 
         return $this;
     }
