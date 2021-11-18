@@ -32,7 +32,8 @@
 
 			if($logged !=NULL && $logged->getActive() == true){
 				if($logged->getRol == "Student"){
-					echo "Estudiante Logueado";
+					$_SESSION["logged"] = logged;
+					$this->ShowProfileView();
 				}
 				else{
 					$_SESSION["logged"] = $logged;
@@ -53,6 +54,28 @@
 			require_once(VIEWS_PATH."add-user.php");
 		}
 
+		 public function ShowProfileView()
+        {
+            require_once(VIEWS_PATH."student-profile.php");
+        }
+
+         public function Add($name, $lastName, $email, $telephone, $gender, $birthDate, $cellphone, $dni, $rol)
+        {
+            $user = new User();
+            $user->setFirstName($name);
+            $user->setLastName($lastName);
+            $user->setDni($dni);
+            $user->setEmail($email);
+            $user->setFileNumber($telephone);
+            $user->setGender($gender);
+            $user->setBirthDate($birthDate);
+            $user->setPhoneNumber($cellphone);
+            $user->setActive('active');
+            $user->setRol($rol);
+
+            $this->userDAO->Add($user);
+            $this->ShowAddView();
+        }
 
 	}
 ?>
