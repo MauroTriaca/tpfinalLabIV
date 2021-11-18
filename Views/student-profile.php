@@ -16,7 +16,7 @@
                 </thead>
                 <tbody>
                     <tr class="table-light">
-                        <th><?php echo $_SESSION['logged']->getCareerId() ?></th>
+                        <th><?php echo $career->getDescription() ?></th>
                         <td><?php echo $_SESSION['logged']->getFirstName() ?></td>
                         <td><?php echo $_SESSION['logged']->getLastName() ?></td>
                         <td><?php echo $_SESSION['logged']->getDni() ?></td>

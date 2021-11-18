@@ -64,6 +64,23 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="career">Carrera</label>
+                            <select name="career" class="form-control" aria-label="Default select example" required>
+                                <?php 
+                                    foreach($careerList as $value){ 
+                                        if($value->getActive() == true){
+                                ?>
+                                <option value="<?php echo $value->getCareerId() ?>"><?php echo $value->getDescription() ?></option>
+                                <?php                              
+                                        }    
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" name="button" class="btn btn-dark ml-auto d-block">Add
 

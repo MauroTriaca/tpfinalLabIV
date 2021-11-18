@@ -3,12 +3,16 @@
 
 	use Models\User as User;
 	use DAO\UserDAO as UserDAO; 
-
+	use Models\Career as Career;
+	use DAO\CareerDAO as CareerDAO;
+	
 	class UserController{
 		private $userDAO;
+		private $careerDAO;
 
 		public function __construct(){
-			$this->userDAO = new UserDAO(); 
+			$this->userDAO = new UserDAO();
+			$this->careerDAO = new CareerDAO(); 
 		}
 
 		public function Login($user){
@@ -58,6 +62,7 @@
 		}
 
 		public function ShowAddView(){
+			$careerList = $this->careerDAO->GetAllApi();
 			require_once(VIEWS_PATH."add-user.php");
 		}
 
@@ -67,11 +72,11 @@
         }
 
 		 public function ShowStudentProfileView()
-        {
+        {	$career = $this->careerDAO->getById($_SESSION["logged"]->getCareerId);
             require_once(VIEWS_PATH."student-profile.php");
         }
 
-         public function Add($name, $lastName, $email, $telephone, $gender, $birthDate, $cellphone, $dni, $rol)
+         public function Add($name, $lastName, $email, $telephone, $gender, $birthDate, $cellphone, $dni, $rol, $careerId)
         {
             $user = new User();
             $user->setFirstName($name);
@@ -84,6 +89,7 @@
             $user->setPhoneNumber($cellphone);
             $user->setActive('active');
             $user->setRol($rol);
+            $user->setCareerId($careerId);
 
             $this->userDAO->Add($user);
             $this->ShowAddView();
